@@ -16,18 +16,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/myNavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        android:background="@android:color/holo_green_dark"
-        app:title="Rwad Five"
-        app:titleTextColor="@android:color/white"
-        app:menu="@menu/toolbar_menu"
+        android:layout_height="match_parent">
 
-        >
+    </androidx.fragment.app.FragmentContainerView>
 
-    </androidx.appcompat.widget.Toolbar>
+
 
 
 </LinearLayout>
