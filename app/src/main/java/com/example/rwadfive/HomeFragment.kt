@@ -6,18 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.example.rwadfive.databinding.FragmentSecondBinding
+import com.example.rwadfive.databinding.FragmentHomeBinding
 
-class SecondFragment : Fragment() {
 
+class HomeFragment : Fragment() {
+    lateinit var binding:FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       val binding:FragmentSecondBinding = FragmentSecondBinding.inflate(inflater, container, false)
-        binding.navigateBtn2.setOnClickListener(){
-            Navigation.findNavController(it).navigate(R.id.action_secondFragment_to_thirdFragment)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.startQuizBtn.setOnClickListener(){
+            Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_questionsFragment)
         }
         return binding.root
     }
